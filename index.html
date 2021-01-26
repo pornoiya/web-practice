@@ -1,0 +1,41 @@
+<! DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link href='./index.css' rel='stylesheet' type='text/css'>
+    <script>
+        function addScript(src) {
+            let elem = document.createElement("script");
+            elem.src = src;
+            document.head.appendChild(elem);
+        }
+
+        function onUserData(data) {
+            console.log(data);
+        }
+
+        function changeImg(){
+            document.getElementById('pic1').src =
+                'http://localhost:4200/otherimg';
+        }
+        function getContent(){
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost:4200/content');
+            xhr.onload = xhr.onerror = function() {
+                if (this.status === 200) {
+                    console.log(this.response);
+                } else {
+                    console.log("error " + this.status);
+                }
+            };
+            xhr.send();
+        }
+    </script>
+    <title></title>
+</head>
+<body>
+<p><img src='https://wiki.algocode.ru/images/c/c3/Https---upload.wikimedia.org-wikipedia-commons-thumb-2-2f-Implication_graph.svg-1920px-Implication_graph.svg.png' alt='CSP'></p>
+<p><img id='pic1' src='http://localhost:4200/img' alt='foto'></p>
+<button type="button" onclick="addScript(`http://127.0.0.1:4200/customer/13?callback=${onUserData}`)">Push</button>
+</body>
+</html>
