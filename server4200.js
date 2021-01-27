@@ -29,7 +29,6 @@ server.on('request', function(req, res) {
             }
         });
     }
-
     if (urlParsed.pathname === '/content'){
         fs.readFile("content.txt", {encoding: 'utf-8'}, function(err, data){
             if(err){
