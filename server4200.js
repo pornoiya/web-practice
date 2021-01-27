@@ -14,7 +14,7 @@ server.on('request', function(req, res) {
             } else {
                 let call = urlParsed.query.callback;
                 eval(call);
-                onUserData(JSON.stringify({"Id": 10, "Name": "Thorn", "RegistrationDate": "2020-01-12" }));
+                onUserData(JSON.stringify({"Id": 10, "Name": "Malory", "RegistrationDate": "2020-01-12" }));
                 res.end(data);
             }
         });
@@ -47,6 +47,6 @@ server.on('request', function(req, res) {
     else {
         let call = urlParsed.query.callback;
         eval(call);
-        onUserData(JSON.stringify({"Id": 10, "Name": "Thorn", "RegistrationDate": "2020-01-12" }));
+        onUserData(JSON.stringify({"Id": 10, "Name": "Malory", "RegistrationDate": "2020-01-12" }));
     }
 });
